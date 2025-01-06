@@ -1,6 +1,92 @@
 ---
-title: How to install ADB
+title: How to install ADB and Fastboot
 ---
+import { Steps } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
-Under construction 🏗️
+Android Debug Bridge (adb) is a versatile command-line tool that lets you communicate with a device. The adb command facilitates a variety of device actions, such as installing and debugging apps.
 
+## Step 1: Download Android SDK Platform Tools
+
+<Steps>
+
+1. Open your web browser and visit the official Android SDK Platform Tools download page:
+
+   <LinkCard title="Android SDK Platform Tools" href="https://developer.android.com/tools/releases/platform-tools" />
+
+2. Scroll down to find the **“Downloads”** section.
+
+3. Click the **"Download SDK Platform-Tools for Windows"** link to download the ZIP file containing ADB and other tools.
+
+</Steps>
+
+## Step 2: Extract the ZIP File
+
+<Steps>
+
+1. Locate the downloaded ZIP file (e.g., **“platform-tools_r32.0.0-windows.zip”**) in your computer’s Downloads folder.
+
+2. Right-click the ZIP file and select **“Extract All”**.
+
+3. Choose a destination folder where you want to extract the files, and click **“Extract”** This will create a folder containing the ADB and other tools.
+
+</Steps>
+
+## Step 3: Copy the ADB Folder Path
+
+<Steps>
+
+1. Navigate to the folder where you extracted the contents of the ZIP file. This folder should contain the **“adb.exe”** file.
+
+2. Click on the folder’s address bar at the top. It will display the full path to the folder.
+
+</Steps>
+
+## Step 4: Add ADB Path to Environment Variables
+
+<Steps>
+
+1. Type **“Environment Variables”** in the Windows search bar and select **“Edit the system environment variables”**.
+
+2. In the **“System Properties”** window, click the **“Environment Variables”** button at the bottom.
+
+3. In the “Environment Variables” window, under the “System variables” section, locate the “Path” variable, and select it.
+
+4. Click the “Edit” button.
+
+</Steps>
+
+## Step 5: Add ADB Path
+
+<Steps>
+
+1. In the **“Edit Environment Variable”** window, click the **“New”** button.
+
+2. Paste the ADB folder path you copied earlier into the input field.
+
+3. Click **“OK”** to close each of the windows.
+
+</Steps>
+
+## Step 6: Verify ADB Installation
+
+<Steps>
+
+1. Open Command Prompt (cmd), PowerShell or Windows Terminal.
+
+2. Type **“adb”** and press Enter.
+
+3. You should see ADB commands and options displayed, indicating that ADB is successfully installed and configured.
+
+</Steps>
+
+<Aside type="tip">
+
+If you get the following error try closing all open Terminals or restarting the PC.
+
+```powershell
+The term 'adb' is not recognized as the name of a cmdlet.
+```
+
+</Aside>

@@ -32,7 +32,7 @@ export default defineConfig({
             {
                 label: 'Extra',
                 items: [
-                    { label: 'Install ADB and Fastboot', slug: 'extra/install-adb' },
+                    { label: 'Install ADB/Fastboot (Windows)', slug: 'extra/install-adb' },
                     { label: 'Install Custom ROM', slug: 'extra/install-rom' },
                 ],
             },

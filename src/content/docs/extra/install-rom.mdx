@@ -35,9 +35,9 @@ so we need to install all three partitions to have a functional recovery.
 <FileTree>
 
 - files
-  - boot.img
-  - vendor_boot.img
-  - dtbo.img
+  - boot.img (This is where the kernel and recovery are stored)
+  - vendor_boot.img (This is where the kernel modules are stored.)
+  - dtbo.img (Here is the configuration of the modules)
 
 </FileTree>
 
@@ -80,9 +80,9 @@ To perform the installation you must have ADB/Fastboot installed on your pc. You
 
 <Steps>
 
-1. Enable the developer options on your system and activate USB debugging.
+1. Enable the **"Developer options"** on your system and activate **"USB debugging"**.
 
-2. Connect your device via USB, if you get a message saying “Allow USB debugging?” click Allow.
+2. Connect your device via USB, if you get a message saying **“Allow USB debugging?”** click **"Allow"**.
 
 3. Reboot your device to bootloader
 
@@ -113,7 +113,7 @@ This step is only done if you are on Stock ROM and want to install a Custom ROM.
    adb sideload copy-partitions-20220613-signed.zip
 ```
 
-Finally select **"Advenced"** and then **"Reboot to recovery"**.
+Finally select **"Advanced"** and then **"Reboot to recovery"**.
 </Aside>
 
 <Steps>
@@ -132,7 +132,7 @@ Finally select **"Advenced"** and then **"Reboot to recovery"**.
     Click **Yes** and wait for the installation to finish.
    </Aside>
 
-2. Select **"Advenced"** and then **"Reboot to recovery"**.
+2. Select **"Advanced"** and then **"Reboot to recovery"**.
    <Aside>
     Sometimes you may see a message saying:
     <Badge text="To install additional packages, it is necessary to restart the recovery first do you want to restart in recovery mode?" size="medium" variant="danger" />
@@ -149,7 +149,9 @@ Finally select **"Advenced"** and then **"Reboot to recovery"**.
 
 </Steps>
 
-## Mistakes you may face:
+<Aside>At the end of the installation of the Custom ROM the recovery will be replaced by the recovery of the installed Custom ROM.</Aside>
+
+## Extra: Mistakes you may face:
 
 ### Downgrade SPL error
 

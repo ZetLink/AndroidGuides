@@ -1,5 +1,92 @@
 ---
 title: Como instalar ADB y Fastboot
 ---
+import { Steps } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
-En construccion 🏗️
+Android Debug Bridge (adb) es una versátil herramienta de línea de comandos que te permite comunicarte con un dispositivo. El comando adb facilita diversas acciones en el dispositivo, como instalar y depurar apps.
+
+## Paso 1: Descargar Android SDK Platform Tools
+
+<Steps>
+
+1. Abre tu navegador y visita la pagina oficial de Android SDK Platform Tools:
+
+   <LinkCard title="Android SDK Platform Tools" href="https://developer.android.com/tools/releases/platform-tools" />
+
+2. Desplácese hacia abajo hasta encontrar la sección **"Downloads"**.
+
+3. Haga clic en el enlace **"Download SDK Platform-Tools for Windows"** para descargar el archivo ZIP que contiene ADB y otras herramientas.
+
+</Steps>
+
+## Pasao 2: Extrae el archivo ZIP
+
+<Steps>
+
+1. Localice el archivo ZIP descargado (por ejemplo, **"platform-tools_r32.0.0-windows.zip"** o **"platform-tools-latest-windows.zip"**) en la carpeta Descargas de su ordenador.
+
+2. Haga clic con el botón derecho en el archivo ZIP y seleccione **"Extraer todo"**.
+
+3. Elige una carpeta de destino donde quieras extraer los archivos, y haz clic en **"Extraer"** Esto creará una carpeta que contiene ADB y otras herramientas.
+
+</Steps>
+
+## Paso 3: Copia la ruta de la carpeta que contiene ADB
+
+<Steps>
+
+1. Navegue hasta la carpeta en la que extrajo el contenido del archivo ZIP. Esta carpeta debe contener el archivo **"adb.exe"**.
+
+2. Haga clic en la barra de direcciones de la carpeta en la parte superior. Aparecerá la ruta completa a la carpeta. Copiela.
+
+</Steps>
+
+## Paso 4: Añadir la ruta ADB a las variables de entorno
+
+<Steps>
+
+1. Escriba **"Variables de entorno"** en la barra de búsqueda de Windows y seleccione **”Editar las variables de entorno del sistema"**.
+
+2. En la ventana **"Opciones avanzadas"**, haga clic en el botón **”Variables de entorno..."** de la parte inferior derecha.
+
+3. En la ventana **"Variables de entorno"**, en la sección **"Variables del sistema"**, localice la variable **"Path"** y selecciónela.
+
+4. Haga clic en el botón **Editar**.
+
+</Steps>
+
+## Paso 5: Añadir ruta ADB
+
+<Steps>
+
+1. En la ventana **"Editar variable de entorno"**, haz clic en el botón **”Nueva"**.
+
+2. Pegue la ruta de la carpeta ADB que copió anteriormente en el campo de entrada.
+
+3. Pulse **"Aceptar"** para cerrar cada una de las ventanas.
+
+</Steps>
+
+## Paso 6: Verificar la instalación de ADB
+
+<Steps>
+
+1. Abra el símbolo del sistema (cmd), PowerShell o Windows Terminal.
+
+2. Escriba **"adb"** y pulse Enter.
+
+3. Debería ver los comandos y opciones de ADB en pantalla, indicando que ADB se ha instalado y configurado correctamente.
+
+</Steps>
+
+<Aside type="tip">
+
+Si obtiene el siguiente error, intente cerrar todos las Terminales abiertas o reinicie el PC.
+
+```powershell
+El término 'adb' no se reconoce como nombre de un cmdlet
+```
+
+</Aside>

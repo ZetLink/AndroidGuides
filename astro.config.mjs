@@ -15,7 +15,7 @@ export default defineConfig({
         title: 'Android Guides',
         lastUpdated: true,
         social: {
-            github: 'https://github.com/withastro/starlight',
+            github: 'https://github.com/ZetLink',
             telegram: 'https://t.me/ZetLinkUwU',
         },
         locales,

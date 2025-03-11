@@ -1,5 +1,35 @@
 ---
 title: Preparacion
 ---
+import { Steps } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
 
-En construccion 🏗️
+## Requisitos para contruir una custom rom
+
+- CPU: 4 Nucleos o mas
+- RAM: 64Gb (tambien pueden ser 32Gb fisicos y 32Gb de swap)
+- Almacemiento: 500Gb SSD de espacio libre
+- Sistema Operativo: Ubuntu 18.04 o mayor (distribuciones derivadas de Debian, tambien puede ser ArchLinux)
+- Git
+- Repo
+- Conocimientos basicos sobre el manejo de una terminal linux
+
+## Paquetes necesarios para construir Android
+
+```sh title="Ubuntu 18.04 o mayor"
+sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+```
+
+<LinkCard title="Documentacion para construir Android en ArchLinux" href="https://wiki.archlinux.org/title/Android#Building" />
+
+## Instalando repo
+
+<Steps>
+1.  ```sh
+    curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    ```
+
+2. ```sh
+    chmod a+x ~/bin/repo
+    ```
+</Steps>

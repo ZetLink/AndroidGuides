@@ -1,5 +1,46 @@
 ---
 title: Descargar fuente de una custom rom
 ---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
 
-En construccion 🏗️
+## Paso 1: Crear una carpeta donde va a desarrollar la compilacion de la custom rom
+
+```sh
+    mkdir ROM_DIRECTORY
+    cd ROM_DIRECTORY
+```
+
+## Paso 2: Iniciar su repositorio local utilizando la fuente de su rom
+
+Para obtener la fuente de su rom puede hacerlo desde el repositorio **manifest** o **android** de la misma
+
+<Tabs syncKey="roms">
+  <TabItem label="LineageOS">
+    ```sh
+    repo init -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs
+    ```
+  </TabItem>
+  <TabItem label="Derpfest">
+  ```sh
+    repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 15 --git-lfs
+    ```
+  </TabItem>
+</Tabs>
+
+## Paso 3: Sincronizar los archivos de la rom en tu computadora
+
+En este paso de descargaran todos los archivos necesarios para contruir una custom rom, el tamaño de la misma ronda los 150Gb por lo que este proceso suele demorar
+
+<Tabs syncKey="roms">
+  <TabItem label="LineageOS">
+    ```sh
+    repo sync
+    ```
+  </TabItem>
+  <TabItem label="Derpfest">
+  ```sh
+    repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+    ```
+  </TabItem>
+</Tabs>

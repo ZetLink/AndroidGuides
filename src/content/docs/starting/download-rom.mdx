@@ -1,5 +1,46 @@
 ---
 title: Download ROM Source
 ---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
 
-Under construction 🏗️
+## Step 1: Create a folder where you will develop the compilation of the custom ROM
+
+```sh
+    mkdir ROM_DIRECTORY
+    cd ROM_DIRECTORY
+```
+
+## Step 2: Start your local repository using your rom's source
+
+To obtain the source of your rom you can do it from the **manifest** or **android** repository of the rom.
+
+<Tabs syncKey="roms">
+  <TabItem label="LineageOS">
+    ```sh
+    repo init -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs
+    ```
+  </TabItem>
+  <TabItem label="Derpfest">
+  ```sh
+    repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 15 --git-lfs
+    ```
+  </TabItem>
+</Tabs>
+
+## Step 3: Synchronize the rom files on your computer
+
+In this step you will download all the files needed to build a custom rom, the size of it is around 150Gb, so this process usually takes a long time.
+
+<Tabs syncKey="roms">
+  <TabItem label="LineageOS">
+    ```sh
+    repo sync
+    ```
+  </TabItem>
+  <TabItem label="Derpfest">
+  ```sh
+    repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+    ```
+  </TabItem>
+</Tabs>

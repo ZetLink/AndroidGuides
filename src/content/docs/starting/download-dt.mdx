@@ -1,5 +1,79 @@
 ---
 title: Download DeviceTree
 ---
+import { FileTree } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
-Under construction 🏗️
+:::note
+Since I only work with Qualcomm devices I only know their tree.
+:::
+
+A device tree (or dt) is a set of projects that contain the files and configuration necessary for a device to boot a custom ROM.
+
+## Tree structure
+
+<FileTree>
+
+- device
+  - device_brand/
+    - codename/
+    - soc_model-common/
+- vendor
+  - device_brand/
+    - codename/
+    - soc_model-common/
+- kernel
+  - device_brand/
+    - soc_model/
+- hardware
+  - device_brand/
+
+</FileTree>
+
+- device_brand: motorola, xiaomi, samsung, etc.
+- codename: [How to get the Codename of my device?](https://technastic.com/how-to-find-android-device-codename/)
+- soc_model: To obtain it, run the following command: 
+ ```sh
+    adb shell getprop ro.soc.model
+ ```
+
+ As an example, we can use the Moto G52 (rhode) device, and the tree would look like this:
+
+
+ <FileTree>
+
+- device
+  - motorola
+    - rhode/
+    - sm6225-common/
+- vendor
+  - motorola
+    - rhode/
+    - sm6225-common/
+- kernel
+  - motorola
+    - sm6225/
+- hardware
+  - motorola/
+
+</FileTree>
+
+Following this structure, we can organize the name of each project as follows:
+
+
+- device_motorola_rhode
+- device_motorola_sm6225-common
+- vendor_motorola_rhode
+- vendor_motorola_sm6225-common
+- kernel_motorola_sm6225
+- hardware_motorola
+
+## Search the tree of a device
+
+To find your device's tree, you can either develop it yourself (requires more research and knowledge) or search for it on GitHub using your device's project name.
+
+<Aside type="tip">
+
+You can start by looking for the device_[brand]_[codename] repository and check the *.dependencies file, which lists the projects you need to compile.
+
+</Aside>

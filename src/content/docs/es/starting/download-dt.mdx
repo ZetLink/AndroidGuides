@@ -1,5 +1,75 @@
 ---
 title: Descargar arbol del dispositivo
 ---
+import { FileTree } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
-En construccion 🏗️
+:::note
+Dado solo trabaje con dispositivos de Qualcomm solo conozco su arbol.
+:::
+
+El arbol de un dispositivo (devicetree o dt) es un conjunto de proyectos que contienen los archivos y configuracion para que un dispositivo pueda arrancar una custom rom.
+## Estructura de un arbol
+
+<FileTree>
+
+- device
+  - marca_del_dispositivo
+    - codename/
+    - modelo_del_soc-common/
+- vendor
+  - marca_del_dispositivo
+    - codename/
+    - modelo_del_soc-common/
+- kernel
+  - marca_del_dispositivo
+    - modelo_del_soc/
+- hardware
+  - marca_del_dispositvo/
+
+</FileTree>
+
+- marca_del_dispositivo: motorola, xiaomi, samsung, etc.
+- codename: [Como obtener el Codename de mi dispositivo?](https://technastic.com/how-to-find-android-device-codename/)
+- modelo_del_soc: Para obtenerlo ejecuta el siguiente comanado: 
+ ```sh
+    adb shell getprop ro.soc.model
+ ```
+
+Como ejemplo podemos usar el dispositivo Moto G52 (rhode) y el arbol quedaria de la siguiente manera:
+<FileTree>
+
+- device
+  - motorola
+    - rhode/
+    - sm6225-common/
+- vendor
+  - motorola
+    - rhode/
+    - sm6225-common/
+- kernel
+  - motorola
+    - sm6225/
+- hardware
+  - motorola/
+
+</FileTree>
+
+Siguiendo esa estructura podemos organizar el nombre de cada proyecto, quedandonos tal que asi:
+- device_motorola_rhode
+- device_motorola_sm6225-common
+- vendor_motorola_rhode
+- vendor_motorola_sm6225-common
+- kernel_motorola_sm6225
+- hardware_motorola
+
+## Buscar el arbol de un dispositivo
+
+Para encontrar el arbol de su dispositvo puede desarrollarlo usted mismo (requiere mas investigacion y conocimiento) o puede buscarlo en github utilizando el nombre del proyecto de su dispositivo.
+
+<Aside type="tip">
+
+Puede comenzar buscando el repositorio **device_[marca]_[codename]** y revisar el archivo *.dependencies en el cual se indican los proyectos que necesita para compilar.
+
+</Aside>
+

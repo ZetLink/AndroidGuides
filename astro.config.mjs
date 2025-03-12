@@ -26,9 +26,9 @@ export default defineConfig({
                     es: 'Comezando',
                 },
                 items: [
-                    { label: 'Preparations', slug: 'starting/preparations', translations: {es: 'Preparacion',} },
-                    { label: 'Download ROM Source', slug: 'starting/download-rom', translations: {es: 'Descargando Fuente de la ROM',}},
-                    { label: 'Download DeviceTree', slug: 'starting/download-dt', translations: {es: 'Descargando Arbol del Dispositivo',} },
+                    { label: 'Preparations', slug: 'starting/preparations', translations: {es: 'Preparación',} },
+                    { label: 'Download ROM Source', slug: 'starting/download-rom', translations: {es: 'Descargando fuente de la ROM',}},
+                    { label: 'Download DeviceTree', slug: 'starting/download-dt', translations: {es: 'Descargando árbol del dispositivo',} },
                 ],
             },
             {

@@ -1,5 +1,5 @@
 ---
-title: Descargar arbol del dispositivo
+title: Descargar árbol del dispositivo
 ---
 import { FileTree } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
@@ -8,8 +8,9 @@ import { Aside } from '@astrojs/starlight/components';
 Dado solo trabaje con dispositivos de Qualcomm solo conozco su arbol.
 :::
 
-El arbol de un dispositivo (devicetree o dt) es un conjunto de proyectos que contienen los archivos y configuracion para que un dispositivo pueda arrancar una custom rom.
-## Estructura de un arbol
+El árbol de un dispositivo (devicetree o dt) es un conjunto de proyectos que contienen los archivos y la configuración necesarios para que un dispositivo pueda arrancar una custom ROM.
+
+## Estructura de un árbol
 
 <FileTree>
 
@@ -36,7 +37,9 @@ El arbol de un dispositivo (devicetree o dt) es un conjunto de proyectos que con
     adb shell getprop ro.soc.model
  ```
 
-Como ejemplo podemos usar el dispositivo Moto G52 (rhode) y el arbol quedaria de la siguiente manera:
+Como ejemplo, podemos usar el dispositivo Moto G52 (rhode), y el árbol quedaría de la siguiente manera:
+
+
 <FileTree>
 
 - device
@@ -55,7 +58,9 @@ Como ejemplo podemos usar el dispositivo Moto G52 (rhode) y el arbol quedaria de
 
 </FileTree>
 
-Siguiendo esa estructura podemos organizar el nombre de cada proyecto, quedandonos tal que asi:
+Siguiendo esa estructura, podemos organizar el nombre de cada proyecto, quedándonos tal que así:
+
+
 - device_motorola_rhode
 - device_motorola_sm6225-common
 - vendor_motorola_rhode
@@ -65,11 +70,11 @@ Siguiendo esa estructura podemos organizar el nombre de cada proyecto, quedandon
 
 ## Buscar el arbol de un dispositivo
 
-Para encontrar el arbol de su dispositvo puede desarrollarlo usted mismo (requiere mas investigacion y conocimiento) o puede buscarlo en github utilizando el nombre del proyecto de su dispositivo.
+Para encontrar el árbol de tu dispositivo, puedes desarrollarlo tú mismo (requiere más investigación y conocimiento) o buscarlo en GitHub utilizando el nombre del proyecto de tu dispositivo.
 
 <Aside type="tip">
 
-Puede comenzar buscando el repositorio **device_[marca]_[codename]** y revisar el archivo *.dependencies en el cual se indican los proyectos que necesita para compilar.
+Puedes comenzar buscando el repositorio device_[marca]_[codename] y revisar el archivo *.dependencies, en el cual se indican los proyectos que necesitas para compilar.
 
 </Aside>
 

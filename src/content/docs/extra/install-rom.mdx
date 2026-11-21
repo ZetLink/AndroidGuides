@@ -73,6 +73,14 @@ so we need to install all three partitions to have a functional recovery.
 >
   Recovery G200
 </LinkButton>
+<LinkButton
+  href="https://sourceforge.net/projects/zetlink-files/files/Recovery-RTWO/"
+  variant="minimal"
+  icon="external"
+  iconPlacement="start"
+>
+  Recovery E40P
+</LinkButton>
 
 ## Step 3: Install Recovery/Kernel
 
@@ -95,6 +103,7 @@ To perform the installation you must have ADB/Fastboot installed on your pc. You
    fastboot flash boot boot.img
    fastboot flash vendor_boot vendor_boot.img
    fastboot flash dtbo dtbo.img
+   fastboot flash recovery recovery.img # only E40P
    ```
 5. Reboot your device to recovery
 

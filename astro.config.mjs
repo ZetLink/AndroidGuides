@@ -9,6 +9,7 @@ export const locales = {
 
 export default defineConfig({
 	redirects: {
+		'/': '/en/',
 		'/extra/install-adb': '/en/extra/install-adb',
 		'/extra/install-rom': '/en/extra/install-rom',
 	},
